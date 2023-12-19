@@ -1,0 +1,87 @@
+#!/bin/bash
+#
+# Support functions for Lab
+
+LOGFILENAME="docker.log"
+
+log () {
+export LOGFILE="$LOGFILENAME"
+   if [ "$LOGFILE" ]
+   then
+      echo "$*" >> $LOGFILE
+   else
+      touch "$LOGFILENAME"
+      echo "$*" >> $LOGFILE
+   fi
+}
+
+function ctrl_c() {
+       temp=$(tty)
+       ps -ef | grep sshd | grep @${temp:5} | awk '{print "kill -9", $2}' | sh
+}
+
+swap_add () {
+   #SWAP increase in ubuntu if its -le 2GB
+   # Check if we want increase swap file i.e. it is less than 2 GiB
+   if  [ "$(free | awk '/^Swap:/ { print $2 }')" = "0" ] || [ "$(free --bytes | awk '/^Swap:/ { print $2 }')" -lt 2147483648 ] 
+   then
+      swapoff -a
+      dd if=/dev/zero of=/swapfile bs=7G count=8
+      chmod 600 /swapfile
+      mkswap /swapfile
+      swapon /swapfile
+      echo "/swapfile none swap sw 0 0" >> /etc/fstab
+   fi
+}
+
+all_docker_stop () {
+        docker stop $(docker ps -a -q)
+}
+
+all_docker_remove () {
+         docker stop $(docker ps -a -q)
+         docker rm $(docker ps -a -q)
+         #Clear Cache in Linux
+	      sync; echo 1 > /proc/sys/vm/drop_caches
+	      sync; echo 2 > /proc/sys/vm/drop_caches
+	      sync; echo 3 > /proc/sys/vm/drop_caches
+}
+
+all_docker_img_remove (){
+        docker stop $(docker ps -a -q)
+        docker rm $(docker ps -a -q)
+        docker rmi -f $(docker images -a -q)
+        #Clear Cache in Linux
+	     sync; echo 1 > /proc/sys/vm/drop_caches
+	     sync; echo 2 > /proc/sys/vm/drop_caches
+	     sync; echo 3 > /proc/sys/vm/drop_caches
+}
+
+docker_login (){
+      
+}
+
+update_upgrade (){
+      apt-get -y update
+      apt-get -y upgrade
+}
+
+docker_install (){
+      apt-get -y install  apt-transport-https  ca-certificates curl gnupg-agent software-properties-common
+      curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+      add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+      apt-get -y update
+      apt-get -y install docker-ce docker-ce-cli containerd.io
+}
+
+install_tool (){
+      apt-get -y install docker-compose git dialog 
+}
+
+google_auth_setup (){
+  
+}
+
+add_root_sshkey (){
+ 
+}
