@@ -13,19 +13,19 @@ source utils
 #Add Swap memory
 #swap_add
 
-# Update and Upgrade the currunt UBUNTU system
+# Update and Upgrade the current kali system
 update_upgrade
 
 #Install docker
 docker_install
 
-#Login into docker hub account - Replace valid credentials in this script
+#Login into the docker hub account - Replace valid credentials in this script
 docker_login
 
 #Install Docker compose + required tools
 install_tool
 
-# If docker alrady install then stop all container and forcefully clean the images
+# If docker already install then stop all containers and forcefully clean the images
 all_docker_img_remove 
 
 # Download launcher and utils
