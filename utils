@@ -21,8 +21,8 @@ function ctrl_c() {
 }
 
 swap_add () {
-   #SWAP increase in ubuntu if its -le 2GB
-   # Check if we want increase swap file i.e. it is less than 2 GiB
+   #SWAP increase in Kali if it -le 2GB
+   # Check if we want to increase the swap file i.e. it is less than 2 GiB
    if  [ "$(free | awk '/^Swap:/ { print $2 }')" = "0" ] || [ "$(free --bytes | awk '/^Swap:/ { print $2 }')" -lt 2147483648 ] 
    then
       swapoff -a
@@ -67,15 +67,12 @@ update_upgrade (){
 }
 
 docker_install (){
-      apt-get -y install  apt-transport-https  ca-certificates curl gnupg-agent software-properties-common
-      curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
-      add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-      apt-get -y update
-      apt-get -y install docker-ce docker-ce-cli containerd.io
+      apt install -y docker.io
+      systemctl enable docker --now
 }
 
 install_tool (){
-      apt-get -y install docker-compose git dialog 
+      apt-get -y install git dialog 
 }
 
 google_auth_setup (){
