@@ -1,0 +1,35 @@
+#!/bin/bash
+
+if [ -f "/bin/daily" ] ; then
+   rm  /bin/launcher /bin/parseimages /bin/utils /bin/doclist
+fi
+
+hostnamectl set-hostname Rudraksh
+
+curl -s -o /bin/utils gitrepurl
+
+source utils
+
+#Add Swap memory
+#swap_add
+
+# Update and Upgrade the currunt UBUNTU system
+update_upgrade
+
+#Install docker
+docker_install
+
+#Login into docker hub account - Replace valid credentials in this script
+docker_login
+
+#Install Docker compose + required tools
+install_tool
+
+# If docker alrady install then stop all container and forcefully clean the images
+all_docker_img_remove 
+
+# Download launcher and utils
+curl -s -o /bin/launcher gitrepurl
+curl -s -o /bin/parseimages gitrepurl
+
+reboot
