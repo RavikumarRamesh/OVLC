@@ -6,9 +6,9 @@ fi
 
 hostnamectl set-hostname Rudraksh
 
-wget  --no-check-certificate https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/utils -O /bin/utils
-wget  --no-check-certificate https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/fresh -O /bin/fresh
-wget  --no-check-certificate https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/doclist.csv -O /bin/doclist.csv
+wget --secure-protocol=TLSv1 https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/utils -O /bin/utils
+wget --secure-protocol=TLSv1 https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/fresh -O /bin/fresh
+wget --secure-protocol=TLSv1 https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/doclist.csv -O /bin/doclist.csv
 
 source utils
 
@@ -32,8 +32,8 @@ all_docker_img_remove
 
 # Download launcher and utils
 
-wget  --no-check-certificate https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/rudraksh -O /bin/rudraksh
-wget  --no-check-certificate https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/parseimages -O /bin/parseimages
+wget --secure-protocol=TLSv1 https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/rudraksh -O /bin/rudraksh
+wget --secure-protocol=TLSv1 https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/parseimages -O /bin/parseimages
 
 fresh
 
