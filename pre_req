@@ -1,12 +1,12 @@
 #!/bin/bash
 
-if [ -f "/bin/daily" ] ; then
-   rm  /bin/launcher /bin/parseimages /bin/utils /bin/doclist
+if [ -f "/bin/rudraksh" ] ; then
+   rm  /bin/rudraksh /bin/parseimages /bin/utils /bin/doclist.csv
 fi
 
 hostnamectl set-hostname Rudraksh
 
-curl -s -o /bin/utils gitrepurl
+curl -s -o /bin/utils https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/utils
 
 source utils
 
@@ -29,7 +29,7 @@ install_tool
 all_docker_img_remove 
 
 # Download launcher and utils
-curl -s -o /bin/launcher gitrepurl
-curl -s -o /bin/parseimages gitrepurl
+curl -s -o /bin/rudraksh https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/rudraksh
+curl -s -o /bin/parseimages https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/parseimages
 
 reboot
