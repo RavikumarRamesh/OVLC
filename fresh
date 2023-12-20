@@ -4,7 +4,7 @@
 #
 # By Ravikumar Paghdal
 
-source utils
+source /bin/utils
 
 declare -a descs cmd_fresh cmd_start cmd_stop cmd_remove
 
