@@ -16,6 +16,8 @@ curl -o  /bin/rudraksh https://raw.githubusercontent.com/RavikumarRamesh/Rudraks
 curl -o  /bin/parseimages https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/parseimages 
 curl -o  /bin/utils https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/utils
 
+chmod +x /bin/rudraksh /bin/parseimages /bin/utils
+
 DOCLIST="/bin/doclist.csv"
 
 log "[+] Parsing ${DOCLIST}"
