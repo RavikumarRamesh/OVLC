@@ -6,9 +6,9 @@ fi
 
 hostnamectl set-hostname Rudraksh
 
-curl -s -o /bin/utils https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/utils
-curl -s -o /bin/fresh https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/fresh
-curl -s -o /bin/doclist.csv https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/doclist.csv
+wget  https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/utils -O /bin/utils
+wget  https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/fresh -O /bin/fresh
+wget  https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/doclist.csv -O /bin/doclist.csv
 
 source utils
 
@@ -32,8 +32,8 @@ all_docker_img_remove
 
 # Download launcher and utils
 
-curl -s -o /bin/rudraksh https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/rudraksh
-curl -s -o /bin/parseimages https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/parseimages
+wget  https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/rudraksh -O /bin/rudraksh
+wget  https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/parseimages -O /bin/parseimages
 
 fresh
 
