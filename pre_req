@@ -28,8 +28,8 @@ all_docker_img_remove
 
 # Download launcher and utils
 
-curl -o /bin/rudraksh https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/rudraksh  
-curl -o /bin/parseimages https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/parseimages 
+curl -o /bin/rudraksh https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/rudraksh  && chmod +x /bin/rudraksh
+curl -o /bin/parseimages https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/parseimages && chmod +x /bin/parseimages
 
 fresh
 
