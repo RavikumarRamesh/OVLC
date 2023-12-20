@@ -9,12 +9,12 @@ source utils
 declare -a descs cmd_fresh cmd_start cmd_stop cmd_remove
 
 # Get fresh docker list
-curl -s -o /bin/doclist.csv https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/doclist.csv
+wget https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/doclist.csv -O /bin/doclist.csv
 
 # Get changes in daily basis
-curl -s -o /bin/rudraksh https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/rudraksh
-curl -s -o /bin/parseimages https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/parseimages
-curl -s -o /bin/utils https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/utils
+wget  https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/rudraksh -O /bin/rudraksh
+wget  https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/parseimages -O /bin/parseimages
+wget  https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/utils -O /bin/utils
 
 DOCLIST="/bin/doclist.csv"
 
