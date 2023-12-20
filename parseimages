@@ -9,7 +9,7 @@ source utils
 declare -a descs cmd_fresh cmd_start cmd_stop cmd_remove
 declare -A REPONAME TAG NAME ADD_OPTIONS PORT_ARGS POST_DOC_CMD POST_CMD
 
-DOCLIST="/bin/doclist"
+DOCLIST="/bin/doclist.csv"
 
 log "[+] Parsing ${DOCLIST} file"
 
