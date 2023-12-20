@@ -7,13 +7,14 @@ fi
 hostnamectl set-hostname Rudraksh
 
 curl -s -o /bin/utils https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/utils
+curl -s -o /bin/utils https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/doclist.csv
 
 source utils
 
 #Add Swap memory
 #swap_add
 
-# Update and Upgrade the current kali system
+# Update and Upgrade the current Kali system
 update_upgrade
 
 #Install docker
@@ -29,6 +30,7 @@ install_tool
 all_docker_img_remove 
 
 # Download launcher and utils
+
 curl -s -o /bin/rudraksh https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/rudraksh
 curl -s -o /bin/parseimages https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/parseimages
 
