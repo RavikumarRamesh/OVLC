@@ -20,9 +20,7 @@ function ctrl_c() {
        ps -ef | grep sshd | grep @${temp:5} | awk '{print "kill -9", $2}' | sh
 }
 
-swap_add () {
 
-}
 
 all_docker_stop () {
         docker stop $(docker ps -a -q)
@@ -47,9 +45,7 @@ all_docker_img_remove (){
 	     sync; echo 3 > /proc/sys/vm/drop_caches
 }
 
-docker_login (){
-      
-}
+
 
 update_upgrade (){
       apt-get -y update
@@ -64,10 +60,4 @@ install_tool (){
       apt-get -y install git dialog 
 }
 
-google_auth_setup (){
-  
-}
 
-add_root_sshkey (){
- 
-}
