@@ -1,2 +1,3 @@
 #REPO,TAG,NAME,APP_NAME,ADD_OPTIONS,PORT_ARGS,POST_DOC_CMD,POST_CMD
-Demo/d1,v1,APPC19,APPC19 : SQL Injection - DB Banner,-d,-p 8888:80,,docker exec APPC19 service mysql start
+webgoat/webgoat,latest,WEBGOAT,WEBGOAT,-d,-p 13108:8080 -p 13109:9090,,
+appsecco/dsvw,latest,Damn Small Vulnerable Web Application,DSVW,-d,-p 13110:8000,,
