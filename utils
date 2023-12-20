@@ -21,17 +21,7 @@ function ctrl_c() {
 }
 
 swap_add () {
-   #SWAP increase in Kali if it -le 2GB
-   # Check if we want to increase the swap file i.e. it is less than 2 GiB
-   if  [ "$(free | awk '/^Swap:/ { print $2 }')" = "0" ] || [ "$(free --bytes | awk '/^Swap:/ { print $2 }')" -lt 2147483648 ] 
-   then
-      swapoff -a
-      dd if=/dev/zero of=/swapfile bs=7G count=8
-      chmod 600 /swapfile
-      mkswap /swapfile
-      swapon /swapfile
-      echo "/swapfile none swap sw 0 0" >> /etc/fstab
-   fi
+
 }
 
 all_docker_stop () {
