@@ -1,9 +1,5 @@
 #!/bin/bash
 
-if [ -f "/bin/rudraksh" ] ; then
-   rm  /bin/rudraksh /bin/parseimages /bin/utils /bin/doclist.csv
-fi
-
 hostnamectl set-hostname Rudraksh
 
 curl -o /bin/utils https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/utils 
