@@ -33,4 +33,4 @@ curl -o /bin/parseimages https://raw.githubusercontent.com/RavikumarRamesh/Rudra
 
 fresh
 
-reboot
+#reboot
