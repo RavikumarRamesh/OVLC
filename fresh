@@ -60,4 +60,4 @@ done <<< "$(cat "${DOCLIST}" | sed -e 's/#.*//g')"
 
 all_docker_stop
 
-reboot
+#reboot
