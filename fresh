@@ -1,0 +1,63 @@
+#!/bin/bash
+#
+# Docker pull and start daily script
+#
+# By Ravikumar Paghdal
+
+source utils
+
+declare -a descs cmd_fresh cmd_start cmd_stop cmd_remove
+
+# Get fresh docker list
+curl -s -o /bin/doclist.csv https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/doclist.csv
+
+# Get changes in daily basis
+curl -s -o /bin/rudraksh https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/rudraksh
+curl -s -o /bin/parseimages https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/parseimages
+curl -s -o /bin/utils https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/utils
+
+DOCLIST="/bin/doclist.csv"
+
+log "[+] Parsing ${DOCLIST}"
+
+all_docker_remove
+
+count=0
+while IFS=',' read REPO TAG NAME APP_NAME ADD_OPTIONS PORT_ARGS POST_DOC_CMD POST_CMD
+do
+   if [ "$REPO" != "" ]
+   then
+   
+      free_ram_gb=`free --giga | grep -i mem | awk '{print $4}'`
+      run_dock=`docker ps | wc -l`
+      
+      log "docker pull $REPO:$TAG # Free RAM $free_ram_gb GB"
+      echo "docker pull $REPO:$TAG # Free RAM $free_ram_gb GB"
+      docker pull $REPO:$TAG
+      log "docker run $ADD_OPTIONS --name $NAME $PORT_ARGS $REPO:$TAG $POST_DOC_CMD # Free RAM $free_ram_gb GB"
+      echo "docker run $ADD_OPTIONS --name $NAME $PORT_ARGS $REPO:$TAG $POST_DOC_CMD # Free RAM $free_ram_gb GB"
+      docker run $ADD_OPTIONS --name $NAME $PORT_ARGS $REPO:$TAG $POST_DOC_CMD
+      
+       if [[ -n ${POST_CMD} ]]
+       then
+         log "Post Command Executed. $POST_CMD"
+         sleep 60 
+         $($POST_CMD)
+       fi
+    fi
+   if [ $(( $run_dock )) -gt 21 -o $(( $free_ram_gb )) -lt 2 ]
+   then
+   	#Clear Cache in Linux
+	sync; echo 1 > /proc/sys/vm/drop_caches
+	sync; echo 2 > /proc/sys/vm/drop_caches
+	sync; echo 3 > /proc/sys/vm/drop_caches
+		
+	log "Free RAM size is lessthen 2 GB, stop all docker."    
+      	all_docker_stop
+   fi
+count=$((count + 1))
+done <<< "$(cat "${DOCLIST}" | sed -e 's/#.*//g')"
+
+all_docker_stop
+
+reboot
