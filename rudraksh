@@ -86,3 +86,4 @@ esac
 done
 
 ctrl_c
+exit
