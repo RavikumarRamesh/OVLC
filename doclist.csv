@@ -1,4 +1,4 @@
 #REPO,TAG,NAME,APP_NAME,ADD_OPTIONS,PORT_ARGS,POST_DOC_CMD,POST_CMD
 webgoat/webgoat,latest,WEBGOAT,WEBGOAT,-d,-p 13108:8080 -p 13109:9090,,
 appsecco/dsvw,latest,DSVW,Damn Small Vulnerable Web Application,-d,-p 13110:8000,,
-hpandro/xxe_docx,latest,xxe_docx,XXE via DOCX,-d,-p 3306:3306 -p 13111:80,,
+hpandro/xxe_docx,latest,DOCX_XXE,XXE via .docx file parsing,-d, -p 13111:80,,
