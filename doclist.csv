@@ -2,3 +2,4 @@
 webgoat/webgoat,latest,WEBGOAT,WEBGOAT,-d,-p 13108:8080 -p 13109:9090,,
 appsecco/dsvw,latest,DSVW,Damn Small Vulnerable Web Application,-d,-p 13110:8000,,
 hpandro/xxe_docx,latest,DOCX_XXE,XXE via .docx file parsing,-d, -p 13111:80,,
+hpandro/xpath,latest,XPATH,XPATH Injection,-d, -p 13112:80,,
