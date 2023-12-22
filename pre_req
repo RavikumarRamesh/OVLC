@@ -24,7 +24,7 @@ docker_login
 install_tool
 
 # If docker already install then stop all containers and forcefully clean the images
-all_docker_img_remove 
+#all_docker_img_remove 
 
 # Download launcher and utils
 
