@@ -10,4 +10,4 @@ hpandro/oscommand_blind,latest,OS_CMD_2,13116: OS COMMAND INJECTION - Blind 2,-d
 hpandro/cve-2021-41773,latest,PATH_TRAV,13117: PATH TRAVERSAL CVE-2021-41773,-d, -p 13117:80,,
 hpandro/wsdl,latest,WSDL,13118: WSDL Parsing,-d, -p 13118:80,,
 hpandro/vims,latest,VIMS,13119: VIMS Application - busker,-d, -p 13119:80,,docker exec VIMS service mysql start
-hpandro/log4shell,latest,log4shell,13120: Apache Log4j2 2021-44228 POST /hello HTTP/1.1  payload=xxxxx ,-d, -p 13120:8080,,
+hpandro/log4shell,latest,log4shell,13120: Apache Log4j2 2021-44228 POST /hello HTTP/1.1  Content-Type: application/x-www-form-urlencoded payload=xxxxx ,-d, -p 13120:8080,,
