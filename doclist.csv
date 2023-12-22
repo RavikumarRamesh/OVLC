@@ -4,4 +4,4 @@ appsecco/dsvw,latest,DSVW,13110: Damn Small Vulnerable Web Application,-d,-p 131
 hpandro/xxe_docx,latest,DOCX_XXE,13111: XXE via .docx file parsing,-d, -p 13111:80,,
 hpandro/xpath,latest,XPATH,13112: XPATH Injection,-d, -p 13112:80,,
 hpandro/simplexxe,latest,XXE,13113: XML external entity (XXE) injection,-d, -p 13113:80,,docker exec XXE service mysql start
-cytopia/dvwa,latest,DVWA,13114: Damn Vulnerable Web Application,-d, -p 13114:80,,
+cytopia/dvwa,latest,DVWA,13114: Damn Vulnerable Web Application,-d -e MYSQL_HOSTNAME='127.0.0.1' -e MYSQL_DATABASE='dvwa' -e MYSQL_USERNAME='dvwa' -e MYSQL_PASSWORD='p@ssw0rd',-p 13114:80,,
