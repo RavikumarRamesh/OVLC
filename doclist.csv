@@ -5,3 +5,5 @@ hpandro/xxe_docx,latest,DOCX_XXE,13111: XXE via .docx file parsing,-d, -p 13111:
 hpandro/xpath,latest,XPATH,13112: XPATH Injection,-d, -p 13112:80,,
 hpandro/simplexxe,latest,XXE,13113: XML external entity (XXE) injection,-d, -p 13113:80,,docker exec XXE service mysql start
 hpandro/xinclude,latest,XINCLUDE,13114: Exploiting XInclude to retrieve files,-d, -p 13114:80,,
+hpandro/oscommand_dns,latest,OS_CMD_1,13115: OS COMMAND INJECTION - Blind 1,-d, -p 13115:80,,
+hpandro/oscommand_blind,latest,OS_CMD_2,13116: OS COMMAND INJECTION - Blind 2,-d, -p 13116:80,,
