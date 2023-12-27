@@ -82,7 +82,7 @@ $DIALOG_START)
  $DIALOG_EXIT)
       break ;;
 esac
-exit
+
 done
 
 ctrl_c
