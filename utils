@@ -20,7 +20,19 @@ function ctrl_c() {
        ps -ef | grep sshd | grep @${temp:5} | awk '{print "kill -9", $2}' | sh
 }
 
-
+swap_add () {
+   #SWAP increase in ubuntu if its -le 2GB
+   # Check if we want increase swap file i.e. it is less than 2 GiB
+   if  [ "$(free | awk '/^Swap:/ { print $2 }')" = "0" ] || [ "$(free --bytes | awk '/^Swap:/ { print $2 }')" -lt 2147483648 ] 
+   then
+      swapoff -a
+      dd if=/dev/zero of=/swapfile bs=7G count=8
+      chmod 600 /swapfile
+      mkswap /swapfile
+      swapon /swapfile
+      echo "/swapfile none swap sw 0 0" >> /etc/fstab
+   fi
+}
 
 all_docker_stop () {
         docker stop $(docker ps -a -q)
@@ -35,24 +47,27 @@ all_docker_remove () {
 	      sync; echo 3 > /proc/sys/vm/drop_caches
 }
 
-all_docker_img_remove (){
-        docker stop $(docker ps -a -q)
-        docker rm $(docker ps -a -q)
-        docker rmi -f $(docker images -a -q)
-        #Clear Cache in Linux
-	     sync; echo 1 > /proc/sys/vm/drop_caches
-	     sync; echo 2 > /proc/sys/vm/drop_caches
-	     sync; echo 3 > /proc/sys/vm/drop_caches
-}
-
-
-
 update_upgrade (){
       apt-get -y update
+      apt-get -y upgrade
 }
 
 docker_install (){
-      apt install -y docker.io
+      # Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl gnupg
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+
+sudo apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
       systemctl enable docker --now
 }
 
