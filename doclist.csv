@@ -17,4 +17,3 @@ appsecco/dvna,sqlite,DVNA,13123: Damn Vulnerable NodeJS Application,-d,-p 13123:
 appsecco/node-simple-rce,latest,NODE_RCE,13124: Simple Node app with an RCE,-d,-p 13124:8080,,,https://github.com/appsecco/vulnerable-apps/tree/master/node-simple-rce
 bkimminich/juice-shop,latest,JUICE_SHOP,13125: OWASP Juice Shop,-d,-p 13125:3000,,,https://github.com/juice-shop/juice-shop
 vulnerables/web-dvwa,latest,DVWA,13126: Damn Vulnerable Web Application,-d,-p 13126:80,,,https://github.com/digininja/DVWA
-webpwnized/mutillidae,www-1.0.59,mutillidae,13127: OWASP Mutillidae II,-d,-p 13127:80,,,https://github.com/webpwnized/mutillidae
