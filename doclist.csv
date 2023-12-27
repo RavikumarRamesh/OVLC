@@ -14,3 +14,4 @@ hpandro/log4shell,latest,log4shell,13120: Apache Log4j2 2021-44228 POST /hello H
 hpandro/xslt,latest,XSLT,13121: XSLT Injection,-d, -p 13121:80,,,https://raviramesh.info/xml-attacks.html
 appsecco/dvja,latest,DVJA,13122: Damn Vulnerable Java Application,-d,-p 13122:8080,,,https://github.com/appsecco/dvja
 appsecco/dvna,sqlite,DVNA,13123: Damn Vulnerable NodeJS Application,-d,-p 13123:9090,,,https://github.com/appsecco/dvna
+appsecco/node-simple-rce,latest,NODE_RCE,13124: Simple Node app with an RCE,-d,-p 13124:8080,,,https://github.com/appsecco/vulnerable-apps/tree/master/node-simple-rce
