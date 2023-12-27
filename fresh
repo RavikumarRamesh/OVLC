@@ -25,7 +25,7 @@ log "[+] Parsing ${DOCLIST}"
 all_docker_remove
 
 count=0
-while IFS=',' read REPO TAG NAME APP_NAME ADD_OPTIONS PORT_ARGS POST_DOC_CMD POST_CMD
+while IFS=',' read REPO TAG NAME APP_NAME ADD_OPTIONS PORT_ARGS POST_DOC_CMD POST_CMD REF
 do
    if [ "$REPO" != "" ]
    then
