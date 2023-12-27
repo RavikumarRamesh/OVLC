@@ -1,7 +1,6 @@
 #!/bin/bash
 #
-# Docker pull and start daily script
-#
+# All Dockers pull and start daily script
 # By Ravikumar Paghdal
 
 source /bin/utils
@@ -9,12 +8,12 @@ source /bin/utils
 declare -a descs cmd_fresh cmd_start cmd_stop cmd_remove
 
 # Get fresh docker list
-curl -o  /bin/doclist.csv https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/doclist.csv
+curl -s -o  /bin/doclist.csv https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/doclist.csv
 
-# Get changes in daily basis
-curl -o  /bin/rudraksh https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/rudraksh 
-curl -o  /bin/parseimages https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/parseimages 
-curl -o  /bin/utils https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/utils
+# Get updated binary in daily basis
+curl -s -o  /bin/rudraksh https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/rudraksh 
+curl -s -o  /bin/parseimages https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/parseimages 
+curl -s -o  /bin/utils https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/utils
 
 chmod +x /bin/rudraksh /bin/parseimages /bin/utils
 
@@ -22,6 +21,7 @@ DOCLIST="/bin/doclist.csv"
 
 log "[+] Parsing ${DOCLIST}"
 
+# All docker containers stop and remove 
 all_docker_remove
 
 count=0
@@ -47,7 +47,7 @@ do
          $($POST_CMD)
        fi
     fi
-   if [ $(( $run_dock )) -gt 21 -o $(( $free_ram_gb )) -lt 2 ]
+   if [ $(( $free_ram_gb )) -lt 1 ]
    then
    	#Clear Cache in Linux
 	sync; echo 1 > /proc/sys/vm/drop_caches
@@ -62,4 +62,4 @@ done <<< "$(cat "${DOCLIST}" | sed -e 's/#.*//g')"
 
 all_docker_stop
 
-#reboot
+reboot
