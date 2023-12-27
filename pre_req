@@ -13,8 +13,12 @@ curl -s -o  /bin/fresh https://raw.githubusercontent.com/RavikumarRamesh/Rudraks
 curl -s -o  /bin/doclist.csv https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/doclist.csv  
 curl -s -o  /bin/rudraksh https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/rudraksh 
 curl -s -o  /bin/parseimages https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/parseimages 
+curl -s -o /etc/motd https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/motd
 
 chmod +x /bin/rudraksh /bin/parseimages /bin/utils /bin/fresh 
+echo "" > /etc/update-motd.d/00-header
+
+curl -s https://raw.githubusercontent.com/RavikumarRamesh/RudrakshLab/main/crontab | crontab -
 
 source /bin/utils
 
