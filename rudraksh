@@ -19,7 +19,7 @@ fundialog=${fundialog=dialog}
 trap ctrl_c INT
 
 declare -a choices
-ipaddr=`ip addr | grep "ens" -A 2 | cut -f1 -d'/' |  awk 'FNR == 3 {print $2}'`
+ipaddr=`ip addr | grep "ens" -A 2 | cut -f1 -d'/' |  awk 'FNR == 4 {print $2}'`
 
 while true
 do
