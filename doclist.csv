@@ -18,5 +18,5 @@ appsecco/node-simple-rce,latest,NODE_RCE,13124: Simple Node app with an RCE,-d,-
 bkimminich/juice-shop,latest,JUICE_SHOP,13125: OWASP Juice Shop,-d,-p 13125:3000,,,https://github.com/juice-shop/juice-shop
 vulnerables/web-dvwa,latest,DVWA,13126: Damn Vulnerable Web Application,-d,-p 13126:80,,,https://github.com/digininja/DVWA
 ianwijaya/hackazon,latest,HACKAZON,13127: Hackazon,-d,-p 13127:80,,,https://github.com/rapid7/hackazon
-neuralegion/beebox,latest,BWAPP,13128: bWAPP BeeBox,-d,-p 13128:80,,,https://itsecgames.blogspot.com/
+neuralegion/beebox,latest,BWAPP,13128: bWAPP bee-box,-d,-p 13128:80,,,https://itsecgames.blogspot.com/
 adamdoupe/wackopicko,latest,WACKOPICKO,13129: WackoPicko ,-d,-p 13129:80,,,https://github.com/adamdoupe/WackoPicko
