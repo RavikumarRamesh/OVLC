@@ -1,4 +1,9 @@
-Draft Mode. -
+# RudrakshLab 
+
+RudrakshLab is an open source penetration testing lab collection that automates the process of download and install dockers in ubuntu servers.
+
+Screenshots
+----
 
 Step 1 : Install Ubuntu 22.04.3 LTS 
 
