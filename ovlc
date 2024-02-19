@@ -42,7 +42,7 @@ do
 done
 
 x=`$fundialog --stdout --clear \
-   --backtitle "RudrakshLab v0.1 ${ipaddr} [Lab Started :$((num_upcon - 1))*] [Free RAM (GB) :${free_ram_gb}]" \
+   --backtitle "OVLC v0.1 ${ipaddr} [Lab Started :$((num_upcon - 1))*] [Free RAM (GB) :${free_ram_gb}]" \
    --ok-label "START" --cancel-label "EXIT"  \
    --extra-button --extra-label "STOP"  \
    --menu "Applications List" 0 0 10 "${choices[@]}" `
