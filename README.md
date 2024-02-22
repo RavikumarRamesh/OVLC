@@ -22,6 +22,11 @@ Usage
 
 Login to the machine and execute the command "ovlc"
 
+![ovlc](image/ovlc.png)
+
+Start the lab
+
+![start](image/start.png)
 
 
 Links
