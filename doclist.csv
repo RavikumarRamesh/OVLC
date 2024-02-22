@@ -23,3 +23,4 @@ adamdoupe/wackopicko,latest,WACKOPICKO,13129: WackoPicko ,-d,-p 13129:80,,,https
 neuralegion/brokencrystals,latest,BRO_CRY,13130: Broken Crystals ,-d,-p 13130:3000,,,https://github.com/NeuraLegion/brokencrystals
 neuralegion/xxelab,latest,XXE_LAB,13131: XML eXternal Entity vulnerability ,-d,-p 13131:80,,,https://github.com/NeuraLegion/xxelab
 bhattsameer/jsdebugginglab,latest,JSDEBUGG,13132: Client Side Encryption - JS debugging. ,-d,-p 13132:80,,,https://bhattsameer.github.io/2021/01/01/client-side-encryption-bypass-part-1.html
+bltsec/mutillidae-docker,latest,MUTIL,13133/34: Mutillidae II v2.6.52 /mutillidae ,-d,-p 13133:80 13134:443,,,https://github.com/webpwnized/mutillidae
