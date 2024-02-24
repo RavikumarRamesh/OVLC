@@ -2,9 +2,11 @@
 
 OVLC is an open-source penetration testing lab collection that automates the process of downloading and installing dockers in Ubuntu servers.
 
-Screenshots
-----
 
+
+Note 
+----
+This project should involve system configuration changes and the installation of multiple utilities such as dialog, Docker, etc. Additionally, it requires downloading multiple vulnerable labs. So, installing it on your primary working machine is not a good idea. Instead, we suggest creating a separate virtual machine based on Ubuntu LTS and installing it there. Installing it on your working machine, such as Kali Linux, may result in system breakage and potential availability issues.
 
 Installation
 ----
